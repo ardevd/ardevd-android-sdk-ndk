@@ -11,16 +11,16 @@ ENV ANDROID_NDK_HOME /opt/android-ndk-linux
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 	unzip \
-	wget
+	wget \
+        pylint
 RUN cd /opt/android-sdk-linux && \
 	wget -q --output-document=sdk-tools.zip https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip && \
 	unzip sdk-tools.zip && \
 	rm -f sdk-tools.zip && \
-	echo y | sdkmanager "build-tools;27.0.3" "build-tools;27.0.1" "platforms;android-26" "platforms;android-27" && \
+	echo y | sdkmanager "build-tools;27.0.3" "build-tools;27.0.1" "build-tools;26.0.2" "platforms;android-26" "platforms;android-27" && \
 	echo y | sdkmanager "extras;android;m2repository" "extras;google;m2repository" "extras;google;google_play_services" && \
 	sdkmanager "cmake;3.6.4111459" "lldb;3.1"
 RUN wget -q --output-document=android-ndk.zip https://dl.google.com/android/repository/android-ndk-r17b-linux-x86_64.zip && \
 	unzip android-ndk.zip && \
 	rm -f android-ndk.zip && \
 	mv android-ndk-r17b android-ndk-linux
-
