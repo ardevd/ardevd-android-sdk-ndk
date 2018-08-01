@@ -6,7 +6,7 @@ A simple docker image containing jdk8, Android SDK and NDK.
 
 * sdk-tools-4333796
 * build-tools: 26.0.2, 27.0.3 and 28.0.1
-* sdk-platforms: 26 and 27
+* sdk-platforms: 26, 27 and 28.
 * extra-android-m2repository
 * extra-google-m2repository
 * extra-google-google_play_services
